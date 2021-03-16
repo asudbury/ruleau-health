@@ -9,7 +9,7 @@ import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import TableIcons from "../table/MockTableIcons";
 import { logInfo } from "../../utils/Logger";
 
-import { CaseMockData } from "../../mockData/CaseMockDataFinance";
+import { CaseMockData } from "../../mockData/CaseMockDataHealth";
 
 const useStyles = makeStyles((theme) => ({
   container: {

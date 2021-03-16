@@ -71,15 +71,15 @@ export default function CaseDetails({
       <Grid item xs={12} sm={6}>
         <LabelAndValue
           variant="body1"
-          label="Customer ID"
-          value="C33-44-567813"
+          label="NHS Number"
+          value="485 777 3456"
         />
       </Grid>
       <Grid item xs={12} sm={6}>
         <LabelAndValue
           variant="body1"
-          label="Account Number"
-          value="345672345"
+          label="Test Type"
+          value="WGS (Whole Genome Sequence)"
         />
       </Grid>
       <Grid item xs={12} sm={6}>

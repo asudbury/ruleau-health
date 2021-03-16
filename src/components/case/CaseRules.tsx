@@ -20,18 +20,43 @@ export default function CaseRules(): JSX.Element {
           <RuleSummary
             isRuleDefinition={false}
             hasWarning={true}
-            ruleName="RUL001"
-            ruleDescription="KYC Risk is low"
-            ruleSubDescription="Check KYC customer risk to ensure it is within parameters"
+            ruleName="R01-NHSNO"
+            ruleDescription="Check NHS Number"
+            ruleSubDescription="Confirm NHS number matches with Spine details"
           />
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
             canBeOverridden={false}
-            overrideMessage=""
-            ruleName="RUL001"
-            ruleDescription="KYC Risk is low"
-            ruleSubDescription="Check KYC customer risk to ensure it is within parameters"
+            overrideMessage="Must document confirmed reason for no / incorrect NHS number"
+            ruleName="R01-NHSNO"
+            ruleDescription="Check NHS Number"
+            ruleSubDescription="Confirm NHS number matches with Spine details"
+            overrideLevel="1"
+          />
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <RuleSummary
+            isRuleDefinition={false}
+            hasWarning={false}
+            ruleName="R02-CNSNT"
+            ruleDescription="Consent confirmed"
+            ruleSubDescription="Either explicit consent has been provided or a documented reason for implicit consent exists"
+          />
+        </AccordionSummary>
+        <AccordionDetails>
+          <RuleDetails
+            canBeOverridden={true}
+            overrideMessage="Data must be fixed upstream and case re-processed"
+            ruleName="R02-CNSNT"
+            ruleDescription="Consent confirmed"
+            ruleSubDescription="Either explicit consent has been provided or a documented reason for implicit consent exists"
             overrideLevel="NO OVERRIDE"
           />
         </AccordionDetails>
@@ -45,43 +70,18 @@ export default function CaseRules(): JSX.Element {
           <RuleSummary
             isRuleDefinition={false}
             hasWarning={false}
-            ruleName="RUL002"
-            ruleDescription="No bankruptcy flag"
-            ruleSubDescription="Borrower should not have filed any bankruptcies"
+            ruleName="R03-FLVL"
+            ruleDescription="Concentration of Fluid Level within tolerance"
+            ruleSubDescription="Fluid level as a % of total sample volume is within tolerance"
           />
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
             canBeOverridden={true}
-            overrideMessage="Strong evidence of steady income needed to override"
-            ruleName="RUL002"
-            ruleDescription="No bankruptcy flag"
-            ruleSubDescription="Borrower should not have filed any bankruptcies"
-            overrideLevel="2"
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleSummary
-            isRuleDefinition={false}
-            hasWarning={false}
-            ruleName="RUL003"
-            ruleDescription="No open tax liens"
-            ruleSubDescription="Borrower should not have any open tax liens"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <RuleDetails
-            canBeOverridden={true}
-            overrideMessage="Open tax lien must be about to expire or < £100/month"
-            ruleName="RUL003"
-            ruleDescription="No open tax liens"
-            ruleSubDescription="Borrower should not have any open tax liens"
+            overrideMessage="Confirm no possibility of increasing sample fluid level (e.g. because its not possible to re-bleed the patient"
+            ruleName="R03-FLVL"
+            ruleDescription="Concentration of Fluid Level within tolerance"
+            ruleSubDescription="Fluid level as a % of total sample volume is within tolerance"
             overrideLevel="2"
           />
         </AccordionDetails>
@@ -95,19 +95,19 @@ export default function CaseRules(): JSX.Element {
           <RuleSummary
             isRuleDefinition={false}
             hasWarning={true}
-            ruleName="RUL004"
-            ruleDescription="No CCJs"
-            ruleSubDescription="Borrower should not have any County Court Judgements"
+            ruleName="R04-LABC"
+            ruleDescription="Downstream lab has capacity"
+            ruleSubDescription="The correct processing lab has been identified and has capacity to perform the test"
           />
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
             canBeOverridden={true}
-            overrideMessage="Only override on manager’s authority"
-            ruleName="RUL004"
-            ruleDescription="No CCJs"
-            ruleSubDescription="Borrower should not have any County Court Judgements"
-            overrideLevel="3"
+            overrideMessage="Confirm capacity for urgent cases via phone to relevant lab"
+            ruleName="R04-LABC"
+            ruleDescription="Downstream lab has capacity"
+            ruleSubDescription="The correct processing lab has been identified and has capacity to perform the test"
+            overrideLevel="2"
           />
         </AccordionDetails>
       </Accordion>
@@ -120,19 +120,19 @@ export default function CaseRules(): JSX.Element {
           <RuleSummary
             isRuleDefinition={false}
             hasWarning={false}
-            ruleName="RUL005"
-            ruleDescription="No hard enquiries"
-            ruleSubDescription="Borrower should not have any hard enquiries in the past 6 months"
+            ruleName="R05-DR"
+            ruleDescription="Responsible Clinician details are present"
+            ruleSubDescription="Contact details for hospital and clinician are all present"
           />
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
             canBeOverridden={true}
-            overrideMessage="Confirm hard enquiry is about to expire"
-            ruleName="RUL005"
-            ruleDescription="No hard enquiries"
-            ruleSubDescription="Borrower should not have any hard enquiries in the past 6 months"
-            overrideLevel="1"
+            overrideMessage="Document details via case notes if not present"
+            ruleName="R05-DR"
+            ruleDescription="Responsible Clinician details are present"
+            ruleSubDescription="Contact details for hospital and clinician are all present"
+            overrideLevel="2"
           />
         </AccordionDetails>
       </Accordion>

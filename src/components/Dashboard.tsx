@@ -26,8 +26,8 @@ export default function Dashboard() {
         <Grid item xs={12} md={12}>
           <ProcessCard
             processId={1}
-            title="Platinum Credit Card"
-            userDescription="Our premiere credit card offering"
+            title="Eligibility Pre-screen"
+            userDescription="Pre-check patients to ensure they meet the basic requirements of testing"
             casesToReviewCount={10}
             casesOverriddenCount={4}
           />
@@ -35,8 +35,8 @@ export default function Dashboard() {
         <Grid item xs={12} md={12}>
           <ProcessCard
             processId={2}
-            title="Entry Level Credit Card"
-            userDescription="Student friendly credit offering"
+            title="Validate Sample Data"
+            userDescription="Check the data on the provided blood sample is complete, accurate and within tolerance"
             casesToReviewCount={10}
             casesOverriddenCount={4}
           />
@@ -44,8 +44,8 @@ export default function Dashboard() {
         <Grid item xs={12} md={12}>
           <ProcessCard
             processId={3}
-            title="1.49% Fixed 60% LTV 2 year Mortgage 2021"
-            userDescription="2 Year Fixed Fee saver"
+            title="Pre-processing check"
+            userDescription="Confirm all the data is in place to proceed with the referral"
             casesToReviewCount={10}
             casesOverriddenCount={4}
           />
