@@ -27,7 +27,7 @@ export default function CaseRules(): JSX.Element {
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
-            canBeOverridden={false}
+            canBeOverridden={true}
             overrideMessage="Must document confirmed reason for no / incorrect NHS number"
             ruleName="R01-NHSNO"
             ruleDescription="Check NHS Number"
@@ -52,7 +52,7 @@ export default function CaseRules(): JSX.Element {
         </AccordionSummary>
         <AccordionDetails>
           <RuleDetails
-            canBeOverridden={true}
+            canBeOverridden={false}
             overrideMessage="Data must be fixed upstream and case re-processed"
             ruleName="R02-CNSNT"
             ruleDescription="Consent confirmed"

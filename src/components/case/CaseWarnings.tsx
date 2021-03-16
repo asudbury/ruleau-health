@@ -35,13 +35,13 @@ export default function CaseWarnings() {
                   The following rules require attention:
                 </Typography>
                 <CaseWarning
-                  ruleName="RUL001"
-                  ruleDescription="KYC Risk is low"
+                  ruleName="R01-NHSNO"
+                  ruleDescription="Check NHS Number"
                   onRuleWarningSelected={handleRuleWarningSelected}
                 />
                 <CaseWarning
-                  ruleName="RUL004"
-                  ruleDescription="No CCJs"
+                  ruleName="R04-LABC"
+                  ruleDescription="Downstream lab has capacity"
                   onRuleWarningSelected={handleRuleWarningSelected}
                 />
               </CardContent>
