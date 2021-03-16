@@ -12,19 +12,19 @@ import RuleDocumentation from "../rule/RuleDocumentation2";
 
 export default function Rules() {
   return (
-    <div>
+    <>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
-          id="panel1a-header"
+          id="R01-NHSNO-header"
         >
           <RuleAccordion
             isRuleDefinition={true}
-            hasWarning={false}
-            ruleName="RUL001"
-            ruleDescription="KYC Risk is low"
-            ruleSubDescription="Check KYC customer risk to ensure it is within parameters"
+            hasWarning={true}
+            ruleName="R01-NHSNO"
+            ruleDescription="Check NHS Number"
+            ruleSubDescription="Confirm NHS number matches with Spine details"
           />
         </AccordionSummary>
         <AccordionDetails>
@@ -32,9 +32,36 @@ export default function Rules() {
             <RuleSource />
             <RuleDocumentation
               showSwitch={true}
-              ruleName="RUL001"
-              ruleDescription="KYC Risk is low"
-              ruleSubDescription="Check KYC customer risk to ensure it is within parameters"
+              ruleName="R01-NHSNO"
+              ruleDescription="Check NHS Number"
+              ruleSubDescription="Confirm NHS number matches with Spine details"
+              overrideLevel="1"
+            />
+          </Box>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <RuleAccordion
+            isRuleDefinition={true}
+            hasWarning={false}
+            ruleName="R02-CNSNT"
+            ruleDescription="Consent confirmed"
+            ruleSubDescription="Either explicit consent has been provided or a documented reason for implicit consent exists"
+          />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box>
+            <RuleSource />
+            <RuleDocumentation
+              showSwitch={true}
+              ruleName="R02-CNSNT"
+              ruleDescription="Consent confirmed"
+              ruleSubDescription="Either explicit consent has been provided or a documented reason for implicit consent exists"
               overrideLevel="NO OVERRIDE"
             />
           </Box>
@@ -49,9 +76,9 @@ export default function Rules() {
           <RuleAccordion
             isRuleDefinition={true}
             hasWarning={false}
-            ruleName="RUL002"
-            ruleDescription="No bankruptcy flag"
-            ruleSubDescription="Borrower should not have filed any bankruptcies"
+            ruleName="R03-FLVL"
+            ruleDescription="Concentration of Fluid Level within tolerance"
+            ruleSubDescription="Fluid level as a % of total sample volume is within tolerance"
           />
         </AccordionSummary>
         <AccordionDetails>
@@ -59,9 +86,36 @@ export default function Rules() {
             <RuleSource />
             <RuleDocumentation
               showSwitch={true}
-              ruleName="RUL002"
-              ruleDescription="No bankruptcy flag"
-              ruleSubDescription="Borrower should not have filed any bankruptcies"
+              ruleName="R03-FLVL"
+              ruleDescription="Concentration of Fluid Level within tolerance"
+              ruleSubDescription="Fluid level as a % of total sample volume is within tolerance"
+              overrideLevel="2"
+            />
+          </Box>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <RuleAccordion
+            isRuleDefinition={true}
+            hasWarning={true}
+            ruleName="R04-LABC"
+            ruleDescription="Downstream lab has capacity"
+            ruleSubDescription="The correct processing lab has been identified and has capacity to perform the test"
+          />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box>
+            <RuleSource />
+            <RuleDocumentation
+              showSwitch={true}
+              ruleName="R04-LABC"
+              ruleDescription="Downstream lab has capacity"
+              ruleSubDescription="The correct processing lab has been identified and has capacity to perform the test"
               overrideLevel="2"
             />
           </Box>
@@ -76,9 +130,9 @@ export default function Rules() {
           <RuleAccordion
             isRuleDefinition={true}
             hasWarning={false}
-            ruleName="RUL003"
-            ruleDescription="No open tax liens"
-            ruleSubDescription="Borrower should not have any open tax liens"
+            ruleName="R05-DR"
+            ruleDescription="Responsible Clinician details are present"
+            ruleSubDescription="Contact details for hospital and clinician are all present"
           />
         </AccordionSummary>
         <AccordionDetails>
@@ -86,68 +140,14 @@ export default function Rules() {
             <RuleSource />
             <RuleDocumentation
               showSwitch={true}
-              ruleName="RUL003"
-              ruleDescription="No open tax liens"
-              ruleSubDescription="Borrower should not have any open tax liens"
+              ruleName="R05-DR"
+              ruleDescription="Responsible Clinician details are present"
+              ruleSubDescription="Contact details for hospital and clinician are all present"
               overrideLevel="2"
             />
           </Box>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={true}
-            hasWarning={false}
-            ruleName="RUL004"
-            ruleDescription="No CCJs"
-            ruleSubDescription="Borrower should not have any County Court Judgements"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-            <RuleSource />
-            <RuleDocumentation
-              showSwitch={true}
-              ruleName="RUL004"
-              ruleDescription="No CCJs"
-              ruleSubDescription="Borrower should not have any County Court Judgements"
-              overrideLevel="3"
-            />
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <RuleAccordion
-            isRuleDefinition={true}
-            hasWarning={false}
-            ruleName="RUL005"
-            ruleDescription="No hard enquiries"
-            ruleSubDescription="Borrower should not have any hard enquiries in the past 6 months"
-          />
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-            <RuleSource />
-            <RuleDocumentation
-              showSwitch={true}
-              ruleName="RUL005"
-              ruleDescription="No hard enquiries"
-              ruleSubDescription="Borrower should not have any hard enquiries in the past 6 months"
-              overrideLevel="1"
-            />
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-    </div>
+    </>
   );
 }
