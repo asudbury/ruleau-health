@@ -103,8 +103,9 @@ const App = () => {
 
       if (window.location.href.indexOf("github.io") > -1) {
         console.log("we are on githubpages!");
-        location = "/ruleau-health" + location;
+        location = "https://asudbury.github.io/ruleau-health" + location;
       }
+      console.log(location);
       window.location.href = location;
     }
   }
