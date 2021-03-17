@@ -101,7 +101,7 @@ const App = () => {
     if (event.key === "Enter") {
       let location = "/process/1/case/r71227912";
 
-      if (window.location.href.indexOf("github.io") > 1) {
+      if (window.location.href.indexOf("github.io") > -1) {
         console.log("we are on githubpages!");
         location = "/ruleau-health" + location;
       }
