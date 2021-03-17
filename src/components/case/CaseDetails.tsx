@@ -121,7 +121,13 @@ export default function CaseDetails({
 
       <Grid item xs={6}>
         {showPayload && (
-          <Box fontFamily="Monospace" fontSize="h6.fontSize" border={1} p={1}>
+          <Box
+            fontFamily="Monospace"
+            fontSize="h6.fontSize"
+            border={1}
+            p={1}
+            style={{ maxHeight: 300, overflow: "auto" }}
+          >
             <pre>{payload}</pre>
           </Box>
         )}
