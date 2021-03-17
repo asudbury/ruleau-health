@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import LabelAndValue from "../core/LabelAndValue";
 
+import { CaseMockPayload } from "../../mockData/CaseMockPayload";
+
 interface CaseDetailsProps {
   isClosed: boolean;
   onCloseCase: () => void;
@@ -35,6 +37,8 @@ export default function CaseDetails({
   if (storageItem) {
     caseId = storageItem;
   }
+
+  const payload = JSON.stringify(CaseMockPayload, null, 1);
 
   return (
     <Grid container spacing={2}>
@@ -118,9 +122,7 @@ export default function CaseDetails({
       <Grid item xs={6}>
         {showPayload && (
           <Box fontFamily="Monospace" fontSize="h6.fontSize" border={1} p={1}>
-            {"{ "}
-            "kyc": "low", "ccjs": [], "fico_score": 150
-            {" }"}
+            <pre>{payload}</pre>
           </Box>
         )}
       </Grid>
