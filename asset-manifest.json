@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ruleau-health/static/css/main.d7a83c16.chunk.css",
-    "main.js": "/ruleau-health/static/js/main.f1ba8e68.chunk.js",
-    "main.js.map": "/ruleau-health/static/js/main.f1ba8e68.chunk.js.map",
+    "main.js": "/ruleau-health/static/js/main.8d5da675.chunk.js",
+    "main.js.map": "/ruleau-health/static/js/main.8d5da675.chunk.js.map",
     "runtime-main.js": "/ruleau-health/static/js/runtime-main.a07f3252.js",
     "runtime-main.js.map": "/ruleau-health/static/js/runtime-main.a07f3252.js.map",
     "static/js/2.f72ffd42.chunk.js": "/ruleau-health/static/js/2.f72ffd42.chunk.js",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.a07f3252.js",
     "static/js/2.f72ffd42.chunk.js",
     "static/css/main.d7a83c16.chunk.css",
-    "static/js/main.f1ba8e68.chunk.js"
+    "static/js/main.8d5da675.chunk.js"
   ]
 }
