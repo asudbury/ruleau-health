@@ -1,13 +1,15 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from "../src/pages/HomePage";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 import ProcessPage from "./pages/ProcessPage";
 import CasePage from "./pages/CasePage";
-import { logInfo } from "../src/utils/Logger";
+import { logInfo } from "./utils/Logger";
 
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Link to="/process" />
+      <Link to="/process/:processId/case/:caseId" />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />

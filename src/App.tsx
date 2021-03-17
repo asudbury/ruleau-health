@@ -116,9 +116,7 @@ const App = () => {
                   onDarkModeChange={onDarkModeChange}
                 />
               </div>
-              <div>
-                {!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}
-              </div>
+              <div>{!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}</div>
             </Toolbar>
           </AppBar>
         )}
