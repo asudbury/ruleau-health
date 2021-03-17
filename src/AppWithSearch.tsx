@@ -99,7 +99,12 @@ const App = () => {
 
   function handleKeyPress(event: { key: string }) {
     if (event.key === "Enter") {
-      window.location.href = "/process/1/case/r71227912";
+      let location = "/process/1/case/r71227912";
+
+      if (window.location.href.indexOf("ruleau-health") > 1) {
+        location = "/ruleau-health" + location;
+      }
+      window.location.href = location;
     }
   }
 
