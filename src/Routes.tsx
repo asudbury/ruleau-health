@@ -11,6 +11,7 @@ export default function Routes(): JSX.Element {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ruleau" component={HomePage} />
+        <Route exact path="/ruleau-health" component={HomePage} />
         <Route exact path="/process/:processId" component={ProcessPage} />
         <Route exact path="/process/:processId/cases" component={ProcessPage} />
         <Route exact path="/process/:processId/rules" component={ProcessPage} />
@@ -33,6 +34,11 @@ export default function Routes(): JSX.Element {
         <Route
           exact
           path="/process/:processId/case/:caseId"
+          component={CasePage}
+        />
+        <Route
+          exact
+          path="ruleau-health/process/:processId/case/:caseId"
           component={CasePage}
         />
       </Switch>
