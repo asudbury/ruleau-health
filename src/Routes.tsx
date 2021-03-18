@@ -6,8 +6,16 @@ import { logInfo } from "./utils/Logger";
 
 export default function Routes(): JSX.Element {
   logInfo("Public Url=" + process.env.PUBLIC_URL);
+
+  let baseName = process.env.PUBLIC_URL;
+
+  if (window.location.href.indexOf("github") === -1) {
+    baseName = "";
+  }
+
+  logInfo("baseName=" + baseName);
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={baseName}>
       <Link to="/process" />
       <Link to="/process/:processId/case/:caseId" />
       <Switch>
