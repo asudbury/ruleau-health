@@ -89,6 +89,8 @@ export default function ProcessPage() {
             indicatorColor="primary"
             textColor="primary"
             value={value}
+            variant="scrollable"
+            scrollButtons="auto"
             onChange={handleTabChange}
           >
             <Tab icon={<WorkIcon />} label="Cases" value={TabValue.Cases} />
