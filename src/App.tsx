@@ -14,7 +14,7 @@ import {
 
 import createPersistedState from "use-persisted-state";
 
-import { getDarkTheme, getLightTheme } from "../src/themes/ThemeManager";
+import { getTheme } from "../src/themes/ThemeManager";
 
 import Settings from "./components/Settings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
@@ -74,16 +74,13 @@ const App = () => {
 
   const isLoggedIn = IsUserLoggedIn();
 
-  let lightTheme = getLightTheme();
-  let darkTheme = getDarkTheme();
-
   const useShowAppBar = createPersistedState("showAppBar");
   const [showAppBar] = useShowAppBar(true);
 
   const useAppTheme = createPersistedState("appTheme");
   const [appTheme, setAppTheme] = useAppTheme("dark");
 
-  const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
+  const theme = getTheme(appTheme);
 
   const [darkState, setDarkState] = useState(true);
 
