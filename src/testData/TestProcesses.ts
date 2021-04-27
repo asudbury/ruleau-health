@@ -2,7 +2,7 @@
 export const TestProcesses = [
   {
     id: "1",
-    name: "Eligibility Pre Screen",
+    name: "Eligibility Pre-screen",
     desc:
       "Pre-check patients to ensure they meet the basic requirements of testing",
     casesToReview: 7,
@@ -18,7 +18,7 @@ export const TestProcesses = [
   },
   {
     id: "3",
-    name: "Pre Processing Check",
+    name: "Pre Processing-check",
     desc: "Confirm all the data is in place to proceed with the referral",
     casesToReview: 2,
     casesOverridden: 11,
