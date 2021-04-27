@@ -6,13 +6,14 @@ import LogoIcon from "./components/icons/LogoIcon";
 import SearchIcon from "@material-ui/icons/Search";
 import {
   AppBar,
+  Box,
   fade,
+  Hidden,
   InputBase,
   ThemeProvider,
   Toolbar,
   Typography,
   IconButton,
-  Hidden,
 } from "@material-ui/core";
 
 import createPersistedState from "use-persisted-state";
@@ -25,6 +26,9 @@ import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 
 import Routes from "./Routes";
+
+import ProcessList from "./components/ProcessList";
+import History from "../src/utils/History";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -99,15 +103,19 @@ const App = () => {
 
   function handleKeyPress(event: { key: string }) {
     if (event.key === "Enter") {
-      let location = "/process/1/case/r71227912";
+      let location = "/process/1/case/MORR:009341800029707";
 
       if (window.location.href.indexOf("github.io") > -1) {
         console.log("we are on githubpages!");
-        location = "https://asudbury.github.io/ruleau-health" + location;
+        location = "https://asudbury.github.io/ruleau-finance" + location;
       }
       console.log(location);
       window.location.href = location;
     }
+  }
+
+  function handleHomePage() {
+    History.push(process.env.PUBLIC_URL);
   }
 
   return (
@@ -120,11 +128,13 @@ const App = () => {
                 edge="end"
                 color="inherit"
                 aria-label="home page"
-                onClick={() => window.open("/")}
+                onClick={handleHomePage}
               >
                 <LogoIcon fontSize="large" className={classes.logoButton} />
               </IconButton>
-              <Typography variant="h6">Ruleau</Typography>
+              <Typography variant="h6" onClick={handleHomePage}>
+                Ruleau
+              </Typography>
               <Hidden only={["xs"]}>
                 <div className={classes.search}>
                   <div className={classes.searchIcon}>
@@ -142,6 +152,11 @@ const App = () => {
                     inputProps={{ "aria-label": "search" }}
                   />
                 </div>
+              </Hidden>
+              <Hidden only={["xs"]}>
+                <Box ml={10}>
+                  <ProcessList />
+                </Box>
               </Hidden>
               <div className={classes.grow} />
               <div>
@@ -169,6 +184,13 @@ const App = () => {
                     inputProps={{ "aria-label": "search" }}
                   />
                 </div>
+              </Toolbar>
+            </Hidden>
+            <Hidden only={["sm", "md", "lg", "xl"]}>
+              <Toolbar>
+                <Box>
+                  <ProcessList />
+                </Box>
               </Toolbar>
             </Hidden>
           </AppBar>

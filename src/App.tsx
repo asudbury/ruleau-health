@@ -5,7 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import LogoIcon from "../src/components/icons/LogoIcon";
 import {
   AppBar,
+  Box,
   fade,
+  Hidden,
   ThemeProvider,
   Toolbar,
   Typography,
@@ -14,7 +16,7 @@ import {
 
 import createPersistedState from "use-persisted-state";
 
-import { getTheme } from "../src/themes/ThemeManager";
+import { getDarkTheme, getLightTheme } from "../src/themes/ThemeManager";
 
 import Settings from "./components/Settings";
 import LoggedOutStatus from "./components/login/LoggedOutStatus";
@@ -22,6 +24,9 @@ import LoggedOutStatus from "./components/login/LoggedOutStatus";
 import IsUserLoggedIn from "./utils/IsUserLoggedIn";
 
 import Routes from "./Routes";
+
+import ProcessList from "./components/ProcessList";
+import History from "../src/utils/History";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -74,13 +79,16 @@ const App = () => {
 
   const isLoggedIn = IsUserLoggedIn();
 
+  let lightTheme = getLightTheme();
+  let darkTheme = getDarkTheme();
+
   const useShowAppBar = createPersistedState("showAppBar");
   const [showAppBar] = useShowAppBar(true);
 
   const useAppTheme = createPersistedState("appTheme");
   const [appTheme, setAppTheme] = useAppTheme("dark");
 
-  const theme = getTheme(appTheme);
+  const theme = appTheme === "dark" ? { ...darkTheme } : { ...lightTheme };
 
   const [darkState, setDarkState] = useState(true);
 
@@ -92,7 +100,7 @@ const App = () => {
   function onLogin() {}
 
   function handleHomePage() {
-    window.location.href = "/";
+    History.push(process.env.PUBLIC_URL);
   }
 
   return (
@@ -112,6 +120,13 @@ const App = () => {
               <Typography variant="h6" onClick={handleHomePage}>
                 Ruleau
               </Typography>
+              {isLoggedIn && (
+                <Hidden only={["xs"]}>
+                  <Box ml={10}>
+                    <ProcessList />
+                  </Box>
+                </Hidden>
+              )}
               <div className={classes.grow} />
               <div>
                 <Settings
@@ -121,6 +136,15 @@ const App = () => {
               </div>
               <div>{!isLoggedIn && <LoggedOutStatus onLogin={onLogin} />}</div>
             </Toolbar>
+            {isLoggedIn && (
+              <Hidden only={["sm", "md", "lg", "xl"]}>
+                <Toolbar>
+                  <Box>
+                    <ProcessList />
+                  </Box>
+                </Toolbar>
+              </Hidden>
+            )}
           </AppBar>
         )}
         <Routes />
