@@ -7,7 +7,6 @@ import ReportProblemOutlinedIcon from "@material-ui/icons/ReportProblemOutlined"
 import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import TableIcons from "../table/MockTableIcons";
-import { logInfo } from "../../utils/Logger";
 
 import { CaseMockData } from "../../mockData/CaseMockDataHealth";
 
@@ -97,9 +96,6 @@ export default function Cases({
         <MaterialTable
           title=""
           icons={TableIcons}
-          onFilterChange={(filters) => {
-            logInfo("onFilterChange filters=" + filters);
-          }}
           components={{
             Pagination: (props) => (
               <TablePagination

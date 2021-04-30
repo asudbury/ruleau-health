@@ -38,7 +38,6 @@ export default function RuleDetails({
   }
 
   function handleSaveOverride() {
-    logInfo("handleSaveOverride");
   }
 
   return (
