@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import BallotIcon from "@material-ui/icons/Ballot";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -72,10 +73,11 @@ export default function ProcessCard({
     );
   }
   return (
-    <Card>
+    <Card variant="outlined">
       <CardHeader
+        avatar={<BallotIcon color="primary" />}
         title={title}
-        titleTypographyProps={{ color: "primary" }}
+        titleTypographyProps={{ color: "primary", variant: "h6" }}
         subheader={userDescription}
       />
       <Box p={1}>
