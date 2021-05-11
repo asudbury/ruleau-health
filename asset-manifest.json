@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/ruleau-health/static/css/main.d7a83c16.chunk.css",
-    "main.js": "/ruleau-health/static/js/main.85aeaf8e.chunk.js",
-    "main.js.map": "/ruleau-health/static/js/main.85aeaf8e.chunk.js.map",
-    "runtime-main.js": "/ruleau-health/static/js/runtime-main.ebc6ae01.js",
-    "runtime-main.js.map": "/ruleau-health/static/js/runtime-main.ebc6ae01.js.map",
-    "static/js/2.f7368347.chunk.js": "/ruleau-health/static/js/2.f7368347.chunk.js",
-    "static/js/2.f7368347.chunk.js.map": "/ruleau-health/static/js/2.f7368347.chunk.js.map",
-    "static/js/3.5b405b7c.chunk.js": "/ruleau-health/static/js/3.5b405b7c.chunk.js",
-    "static/js/3.5b405b7c.chunk.js.map": "/ruleau-health/static/js/3.5b405b7c.chunk.js.map",
+    "main.js": "/ruleau-health/static/js/main.67b0173d.chunk.js",
+    "main.js.map": "/ruleau-health/static/js/main.67b0173d.chunk.js.map",
+    "runtime-main.js": "/ruleau-health/static/js/runtime-main.ffd6ffb7.js",
+    "runtime-main.js.map": "/ruleau-health/static/js/runtime-main.ffd6ffb7.js.map",
+    "static/js/2.22782b8a.chunk.js": "/ruleau-health/static/js/2.22782b8a.chunk.js",
+    "static/js/2.22782b8a.chunk.js.map": "/ruleau-health/static/js/2.22782b8a.chunk.js.map",
+    "static/js/3.1a53fc11.chunk.js": "/ruleau-health/static/js/3.1a53fc11.chunk.js",
+    "static/js/3.1a53fc11.chunk.js.map": "/ruleau-health/static/js/3.1a53fc11.chunk.js.map",
     "static/js/4.69c39246.chunk.js": "/ruleau-health/static/js/4.69c39246.chunk.js",
     "static/js/4.69c39246.chunk.js.map": "/ruleau-health/static/js/4.69c39246.chunk.js.map",
     "static/js/5.ef914796.chunk.js": "/ruleau-health/static/js/5.ef914796.chunk.js",
     "static/js/5.ef914796.chunk.js.map": "/ruleau-health/static/js/5.ef914796.chunk.js.map",
     "index.html": "/ruleau-health/index.html",
     "static/css/main.d7a83c16.chunk.css.map": "/ruleau-health/static/css/main.d7a83c16.chunk.css.map",
-    "static/js/2.f7368347.chunk.js.LICENSE.txt": "/ruleau-health/static/js/2.f7368347.chunk.js.LICENSE.txt",
-    "static/js/3.5b405b7c.chunk.js.LICENSE.txt": "/ruleau-health/static/js/3.5b405b7c.chunk.js.LICENSE.txt",
+    "static/js/2.22782b8a.chunk.js.LICENSE.txt": "/ruleau-health/static/js/2.22782b8a.chunk.js.LICENSE.txt",
+    "static/js/3.1a53fc11.chunk.js.LICENSE.txt": "/ruleau-health/static/js/3.1a53fc11.chunk.js.LICENSE.txt",
     "static/js/4.69c39246.chunk.js.LICENSE.txt": "/ruleau-health/static/js/4.69c39246.chunk.js.LICENSE.txt",
     "static/js/5.ef914796.chunk.js.LICENSE.txt": "/ruleau-health/static/js/5.ef914796.chunk.js.LICENSE.txt",
     "static/media/account.d5f36b6e.svg": "/ruleau-health/static/media/account.d5f36b6e.svg",
@@ -24,9 +24,9 @@
     "static/media/settings.7893141a.svg": "/ruleau-health/static/media/settings.7893141a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ebc6ae01.js",
-    "static/js/2.f7368347.chunk.js",
+    "static/js/runtime-main.ffd6ffb7.js",
+    "static/js/2.22782b8a.chunk.js",
     "static/css/main.d7a83c16.chunk.css",
-    "static/js/main.85aeaf8e.chunk.js"
+    "static/js/main.67b0173d.chunk.js"
   ]
 }
