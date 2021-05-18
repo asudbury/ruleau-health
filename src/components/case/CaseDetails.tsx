@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import {
   Grid,
+  Link,
   Typography,
   Select,
   MenuItem,
@@ -25,6 +26,9 @@ export default function CaseDetails({
   onReopenCase,
 }: CaseDetailsProps) {
   const history = useHistory();
+
+  const { caseId } = useParams<{ caseId: string }>();
+
   const [showPayload, setShowPayload] = useState(false);
 
   function handleShowPayload() {
@@ -49,12 +53,11 @@ export default function CaseDetails({
     }, 1000);
   }
 
-  let caseId = "Unknown";
-
-  const storageItem = sessionStorage.getItem("caseID");
-
-  if (storageItem) {
-    caseId = storageItem;
+  function handleRuleDocumentation() {
+    window.open(
+      process.env.PUBLIC_URL + "/process/Eligibility-Pre-screen/rules",
+      "_blank"
+    );
   }
 
   const payload = JSON.stringify(CaseMockPayload, null, 1);
@@ -127,7 +130,7 @@ export default function CaseDetails({
           />
         )}
       </Grid>
-      <Grid item xs={11}>
+      <Grid item xs={12} sm={6}>
         <FormControlLabel
           control={
             <Switch checked={showPayload} onChange={handleShowPayload} />
@@ -135,7 +138,16 @@ export default function CaseDetails({
           label={<Typography variant="caption">Show Payload</Typography>}
         />
       </Grid>
-
+      <Grid item xs={12} sm={6}>
+        <Link
+          href="#"
+          onClick={handleRuleDocumentation}
+          color="textPrimary"
+          style={{ textDecoration: "underline" }}
+        >
+          Rule Documentation
+        </Link>
+      </Grid>
       <Grid item xs={12} md={6}>
         {showPayload && (
           <Box
